@@ -1,5 +1,5 @@
 import { useNavigate, useParams } from 'react-router-dom';
-import Button from '../components/generics/button/Button';
+import Button from '../../components/generics/Button';
 import s from './Post.module.css';
 
 function Post() {

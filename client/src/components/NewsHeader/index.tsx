@@ -1,4 +1,4 @@
-import Button from './generics/button/Button';
+import Button from '../generics/Button';
 import s from './NewsHeader.module.css';
 
 function NewsHeader() {
