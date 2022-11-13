@@ -1,0 +1,25 @@
+.container {
+  width: 900px;
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+}
+
+.article {
+
+}
+
+.article h1 {
+  font-size: 2rem;
+}
+
+.article_header {
+  display: flex;
+  justify-content: space-between;
+}
