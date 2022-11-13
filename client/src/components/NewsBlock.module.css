@@ -1,9 +1,15 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .section {
   display: flex;
   flex-direction: column;
   border: 2px solid #ccc5b9;
   border-radius: 10px;
   padding: 0.3em;
+
 }
 
 .info {

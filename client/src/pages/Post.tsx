@@ -1,11 +1,14 @@
+import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../components/generics/button/Button';
 import s from './Post.module.css';
 
 function Post() {
+  const navigate = useNavigate();
+
   return (
     <section className={s.container}>
       <header className={s.header}>
-        <Button>Main page</Button>
+        <Button clickHandler={() => navigate("/")}>Main page</Button>
         <Button>Refresh comments</Button>
       </header>
       <article className={s.article}>
