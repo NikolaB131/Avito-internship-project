@@ -1,13 +1,9 @@
 import s from './Error.module.css';
 
-interface ErrorProps {
-  children: string
-}
-
-function Error({children}: ErrorProps) {
+function Error() {
   return (
     <div className={s.wrapper}>
-      <h1>Error: {children}</h1>
+      <h1>Error: page not found</h1>
     </div>
   );
 }
