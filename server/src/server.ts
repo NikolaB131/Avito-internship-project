@@ -1,39 +1,13 @@
 import express from 'express';
+import { fetchItem } from './fetchItem';
 import { Post, Comment } from '../../shared/types';
+
+
 const app = express();
 const port = 4000;
-
-async function fetchItem(id: number): Promise<Post | Comment> {
-  return await fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-    .then(response => response.json())
-    .then((data) => {
-      if (data === null) throw new Error('Request is not correct');
-      switch (data.type) {
-        case 'story':
-          return {
-            id: data.id,
-            author: data.by,
-            time: data.time,
-            comments: data.kids,
-            commentsCount: data.descendants,
-            url: data.url,
-            rating: data.score,
-            title: data.title
-          }
-        case 'comment':
-          return {
-            id: data.id,
-            author: data.by,
-            time: data.time,
-            childs: data.kids,
-            text: data.text,
-            deleted: data.deleted
-          }
-        default:
-          throw new Error(`Unknown item type: "${data.type}"`);
-      }
-    })
-}
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
 
 
 app.get('/api/news', (req, res) => {
@@ -71,7 +45,11 @@ app.get('/api/item/:id', (req, res) => {
     })
 });
 
+// server for static content
+// If not working on your system, change to absolute path
+const pathToBuild = __dirname.slice(0, -10) + '/client/build/';
 
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
-});
+app.use(express.static(pathToBuild));
+app.get('', (req, res) => {
+  res.sendFile(pathToBuild + 'index.html');
+})
