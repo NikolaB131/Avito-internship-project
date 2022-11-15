@@ -1,6 +1,6 @@
-import s from './Error.module.css';
+import s from './ErrorPage.module.css';
 
-function Error() {
+function ErrorPage() {
   return (
     <div className={s.wrapper}>
       <h1>Error: page not found</h1>
@@ -8,4 +8,4 @@ function Error() {
   );
 }
 
-export default Error;
+export default ErrorPage;

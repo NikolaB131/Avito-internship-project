@@ -1,15 +1,15 @@
+import ErrorPage from './pages/ErrorPage';
+import NewsPage from './pages/NewsPage';
+import PostPage from './pages/PostPage';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Error from './pages/Error';
-import News from './pages/News';
-import Post from './pages/Post';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<News />} />
-        <Route path="/news/:id" element={<Post />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/" element={<NewsPage />} />
+        <Route path="/news/:id" element={<PostPage />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );

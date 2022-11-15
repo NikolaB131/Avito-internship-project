@@ -6,6 +6,6 @@
   align-items: center;
 }
 
-.wrapper h1 {
+.wrapper > h1 {
   color: crimson;
 }

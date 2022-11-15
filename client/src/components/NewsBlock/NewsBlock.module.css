@@ -6,13 +6,27 @@
 .section {
   display: flex;
   flex-direction: column;
-  border: 2px solid #ccc5b9;
+  border: 2px solid #c4c2bb;
   border-radius: 10px;
-  padding: 0.3em;
+  padding: 0.7em;
+}
 
+.date {
+  font-size: 0.875rem;
+  color: #888888;
 }
 
 .info {
-  width: 1em;
   display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.info > img {
+  height: 1em;
+}
+
+.author {
+  font-size: 0.875rem;
+  align-self: flex-end;
 }

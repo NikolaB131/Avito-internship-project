@@ -1,0 +1,33 @@
+.container {
+  margin-bottom: 1em;
+}
+
+.author {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: #888888;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5em;
+}
+
+.content > img {
+  height: 1.5em;
+  transition: 0.3s all;
+}
+
+.content > img:hover {
+  cursor: pointer;
+}
+
+.anim {
+  transform: rotate(180deg);
+}
