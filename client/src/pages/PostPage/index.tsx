@@ -19,17 +19,17 @@ function PostPage() {
 
   return (
     <>
-      {isFetching && <p>loading...</p>}
-      {isError && <p style={{color: 'crimson'}}>Loading error!</p>}
-      {isSuccess &&
-        <section className={s.container}>
-          <header className={s.header}>
-            <Button clickHandler={() => navigate("/")}>Main page</Button>
-            <Button clickHandler={() => {
-              refetch();        // refetch post
-              updateComments(); // refetch comments
-            }}>Refresh comments</Button>
-          </header>
+      <section className={s.container}>
+        <header className={s.header}>
+          <Button clickHandler={() => navigate("/")}>Main page</Button>
+          <Button clickHandler={() => {
+            refetch();        // refetch post
+            updateComments(); // refetch comments
+          }}>Refresh comments</Button>
+        </header>
+        {isFetching && <p style={{margin: '0 auto'}}>Loading...</p>}
+        {isError && <p style={{color: 'crimson'}}>Loading error!</p>}
+        {isSuccess &&
           <article className={s.article}>
             <div className={s.article_header}>
               <span className={s.date}>{dateLocaleFormat(post.time)}</span>
@@ -42,9 +42,8 @@ function PostPage() {
               <CommentBlock key={id} id={id} indent={0} showChilds={false} />
             ))}
           </article>
-          <ul className={s.comments}></ul>
-        </section>
-      }
+        }
+      </section>
     </>
   );
 }

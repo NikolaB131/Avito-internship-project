@@ -14,7 +14,7 @@ function NewsPage() {
   return (
     <div className={s.container}>
       <NewsHeader />
-      {isFetching && <p>Loading...</p>}
+      {isFetching && <p style={{margin: '0 auto'}}>Loading...</p>}
       {isError && <p style={{color: 'crimson'}}>Loading error!</p>}
       {isSuccess &&
         posts.map(post => <NewsBlock key={post.id} post={post} />)

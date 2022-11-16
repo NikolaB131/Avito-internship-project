@@ -24,10 +24,12 @@ function CommentBlock({ id, indent, showChilds = true }: CommentProps) {
             <div className={s.content}>
               <div dangerouslySetInnerHTML={{__html: comment.text || ''}} />
               {comment.childs && !showChilds &&
-                <img src={arrowUp} onClick={(event: any) => {
-                  setShow(!show);
-                  event.target.classList.toggle(s.anim);
-                }} />
+                <img src={arrowUp} alt="open comment tree"
+                  onClick={(event: any) => {
+                    setShow(!show);
+                    event.target.classList.toggle(s.anim);
+                  }}
+                />
               }
             </div>
           </div>
